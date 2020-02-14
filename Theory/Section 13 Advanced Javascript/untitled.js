@@ -1,18 +1,33 @@
-const flattened = [
-    [0, 1],
-    [2, 3],
-    [4, 5]
-].reduce(
-    (a, b) => a.concat(b), []);
+// call stack 
+console.log('1');
+console.log('2');
+console.log('3');
 
+const one = () => {
+    const two = () => {
+        console.log("4");
+    }
+    two();
+}
 
-// debugger
-const flattened = [
-    [0, 1],
-    [2, 3],
-    [4, 5]
-].reduce(
-    (accumalator, array) => {
-        debugger;
-        return accumalator.concat(array)
-    }, []);
+// recursion
+function foo() {
+    foo()
+}
+
+foo()
+
+// call stack
+console.log('1');
+setTimeout(() => {
+    console.log('2');
+}, 2000);
+console.log('3');
+
+// CALL STACK
+
+// WEB API
+
+// CALLBACK QUEUE
+
+// EVENT LOOP
