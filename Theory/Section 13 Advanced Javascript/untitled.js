@@ -1,43 +1,101 @@
-// ES10 (ES2019)
+// Solve the below questions:
 
-const array = [1, 2, 3, 4, 5];
-
-const array2 = [1, 2, [3, 4], 5];
-
-const array3 = [1, [2, 3],
+// #1 Turn this array into a new array: [1,2,3,[4],[5]]. Bonus if you can do it on one line
+const array = [
+    [1],
+    [2],
+    [3],
     [
-        [4], 5
+        [
+            [4]
+        ]
+    ],
+    [
+        [
+            [5]
+        ]
+    ]
+]
+
+
+// #2 Turn this array into a new array: [ 'Hello young grasshopper!', 'you are', 'learning fast!' ]
+const greeting = [
+    ["Hello", "young", "grasshopper!"],
+    ["you", "are"],
+    ["learning", "fast!"]
+];
+
+
+
+//#3 Turn the greeting array above into a string: 'Hello young grasshopper you are learning fast!'
+
+
+
+//#4 Turn the trapped 3 number into: [3]
+const trapped = [
+    [
+        [
+            [
+                [
+                    [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            [
+                                                [
+                                                    [
+                                                        [
+                                                            [
+                                                                [
+                                                                    [
+                                                                        [
+                                                                            [
+                                                                                [
+                                                                                    [
+                                                                                        [
+                                                                                            [
+                                                                                                [
+                                                                                                    [3]
+                                                                                                ]
+                                                                                            ]
+                                                                                        ]
+                                                                                    ]
+                                                                                ]
+                                                                            ]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
     ]
 ];
-console.log(array3.flat(5)); // [ 1, 2, 3, 4, 5 ]
 
-const entries = ["Akash", "Andrade", , , , , , , , "Gsus"]
-const newEntry = entries.flatMap(yes => yes + " Joe"); // [ "Akash Joe", "Andrade Joe", "Gsus Joe" ]
 
-let userEmail = "      akashjoffl@icloud.com";
-let userEmail2 = "johnydep@gmail.com     ";
 
-userEmail = userEmail.trimStart(); // "akashjoffl@icloud.com"
-userEmail2 = userEmail2.trimEnd(); // "johnydep@gmail.com"
+//#5 Clean up this email to have no whitespaces. Make the answer be in a single line (return a new string):
+const userEmail3 = '     cannotfillemailformcorrectly@gmail.com   '
 
-// formEntries 
 
-let userProfiles = [
-    ["commanderTom", 23],
-    ["derrickma", 40],
-    ["hansai", 14]
-];
 
-let obj = Object.fromEntries(userProfiles); // { commanderTom: 23, derrickma: 40, hansai: 14 }
+//#6 Turn the below users (value is their ID number) into an array: [ [ 'user1', 18273 ], [ 'user2', 92833 ], [ 'user3', 90315 ] ]
+const users = { user1: 18273, user2: 92833, user3: 90315 }
 
-Object.entries(obj); // backToArrays
 
-// tryCatchBlock
+//#7 change the output array of the above to have the user's IDs multiplied by 2 -- Should output:[ [ 'user1', 36546 ], [ 'user2', 185666 ], [ 'user3', 180630 ] ]
 
-try {
-    akash + "hi"
-} catch (error) { // (error) is optional in ES10
-    console.log("You messed the code " + error)
-}
 
-// You messed the code ReferenceError: akash is not defined
+//#8 change the output array of question #7 back into an object with all the users IDs updated to their new version. Should output: { user1: 36546, user2: 185666, user3: 180630 }
