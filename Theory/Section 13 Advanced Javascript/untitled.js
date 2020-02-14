@@ -16,6 +16,7 @@ const array = [
         ]
     ]
 ]
+array.flat(2);
 
 
 // #2 Turn this array into a new array: [ 'Hello young grasshopper!', 'you are', 'learning fast!' ]
@@ -25,9 +26,13 @@ const greeting = [
     ["learning", "fast!"]
 ];
 
+//Solution:
+console.log(greeting.flatMap(x => x.join(' '))) // [ "Hello young grasshopper!", "you are", "learning fast!" ]
+
 
 
 //#3 Turn the greeting array above into a string: 'Hello young grasshopper you are learning fast!'
+console.log(greeting.flatMap(x => x.join(' ')).join(' ')) // Hello young grasshopper! you are learning fast!
 
 
 
@@ -84,18 +89,25 @@ const trapped = [
     ]
 ];
 
-
+console.log(trapped.flat(Infinity)) // Array [ 3 ]
 
 //#5 Clean up this email to have no whitespaces. Make the answer be in a single line (return a new string):
 const userEmail3 = '     cannotfillemailformcorrectly@gmail.com   '
 
+console.log(userEmail3.trimEnd().trimStart()) // cannotfillemailformcorrectly@gmail.com
 
 
 //#6 Turn the below users (value is their ID number) into an array: [ [ 'user1', 18273 ], [ 'user2', 92833 ], [ 'user3', 90315 ] ]
 const users = { user1: 18273, user2: 92833, user3: 90315 }
 
+const usersArray = Object.entries(users) // [ (2) […], (2) […], (2) […] ]
 
 //#7 change the output array of the above to have the user's IDs multiplied by 2 -- Should output:[ [ 'user1', 36546 ], [ 'user2', 185666 ], [ 'user3', 180630 ] ]
-
+updatedUsersArray = usersArray.map((user) => [user[0], user[1] * 2])
+    /* 0: Array [ "user1", 36546 ]    ​
+    1: Array["user2", 185666]​
+    2: Array["user3", 180630] */
 
 //#8 change the output array of question #7 back into an object with all the users IDs updated to their new version. Should output: { user1: 36546, user2: 185666, user3: 180630 }
+
+const newerUsers = Object.fromEntries(updatedUsersArray); //  { user1: 36546, user2: 185666, user3: 180630 }
