@@ -1,41 +1,43 @@
-// Solve the below problems:
+// ES10 (ES2019)
 
-// #1) Line up the Turtle and the Rabbit at the start line:
-const startLine = '     ||<- Start line';
-let turtle = '🐢';
-let rabbit = '🐇';
+const array = [1, 2, 3, 4, 5];
 
-// it should look like this:
-'     ||<- Start line'
-'       🐢'
-'       🐇'
+const array2 = [1, 2, [3, 4], 5];
 
-// when you do:
-console.log(startLine);
-console.log(turtle);
-console.log(rabbit);
+const array3 = [1, [2, 3],
+    [
+        [4], 5
+    ]
+];
+console.log(array3.flat(5)); // [ 1, 2, 3, 4, 5 ]
 
+const entries = ["Akash", "Andrade", , , , , , , , "Gsus"]
+const newEntry = entries.flatMap(yes => yes + " Joe"); // [ "Akash Joe", "Andrade Joe", "Gsus Joe" ]
 
-turtle = turtle.padStart(8);
-rabbit = rabbit.padStart(8);
+let userEmail = "      akashjoffl@icloud.com";
+let userEmail2 = "johnydep@gmail.com     ";
 
+userEmail = userEmail.trimStart(); // "akashjoffl@icloud.com"
+userEmail2 = userEmail2.trimEnd(); // "johnydep@gmail.com"
 
-// #2) What happens when you run turtle.trim().padEnd(9, '=') on the turtle variable
-// Read about what the second parameter does in padEnd and padStart
-turtle = turtle.trim().padEnd(9, '=');
+// formEntries 
 
-'     ||<- Start line'
-'🐢======='
-'       🐇'
+let userProfiles = [
+    ["commanderTom", 23],
+    ["derrickma", 40],
+    ["hansai", 14]
+];
 
+let obj = Object.fromEntries(userProfiles); // { commanderTom: 23, derrickma: 40, hansai: 14 }
 
-// #3) Get the below object to go from:
-let obj = {
-        my: 'name',
-        is: 'Rudolf',
-        the: 'raindeer'
-    }
-    // to this:
-'my name is Rudolf the raindeer'
+Object.entries(obj); // backToArrays
 
-Object.entries(obj).map(value => value.join(" ")).join(' ')
+// tryCatchBlock
+
+try {
+    akash + "hi"
+} catch (error) { // (error) is optional in ES10
+    console.log("You messed the code " + error)
+}
+
+// You messed the code ReferenceError: akash is not defined
