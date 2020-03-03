@@ -4,6 +4,6 @@ import './index.css';
 import Hello from './Hello';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<Hello greeting={"Hello" + "React Ninja"}/>, document.getElementById('root'));
 
 serviceWorker.unregister();
