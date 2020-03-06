@@ -7,10 +7,10 @@ const SearchBox = ({ searchfield, searchChange}) => {
             className="pa3 ba b--green bg-lightest-blue"
             type="search" 
             placeholder="search robots"
-            onChange ={searchChange} />
+            onChange ={searchChange()} />
         </div>
     );
-};
+}
 
 
 export default SearchBox;
