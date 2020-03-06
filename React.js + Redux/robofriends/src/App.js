@@ -9,7 +9,7 @@ class App extends Component {
         super() // weird thing to add here for constructor before this. 
         this.state = { // state describes the app which can change 
             robots: robots,
-            searchfield: "" 
+            searchfield: ""
         }
     }
 
@@ -34,4 +34,4 @@ class App extends Component {
 
 
 export default App;
-// fixes ya
+// fixes yay
