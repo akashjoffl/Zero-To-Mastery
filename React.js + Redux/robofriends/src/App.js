@@ -13,8 +13,12 @@ class App extends Component {
         }
     }
 
-    onSearchChange(event) {
-        console.log(event.target.value);
+    onSearchChange = (event) => { // anytime comes from React (onstructor, rendor) making method use arrow functions #weirdReact  
+        this.setState( { searchfield: event.target.value })
+        const filteredRobots = this.state.robots.filter(robots => {
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        })
+        console.log(filteredRobots);
     }
     render() {
         return (
