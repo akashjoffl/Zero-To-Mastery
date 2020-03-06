@@ -9,7 +9,7 @@ class App extends Component {
     constructor() {
         super() // weird thing to add here for constructor before this. 
         this.state = { // state describes the app which can change 
-            robots: robots,
+            robots: [],
             searchfield: ""
         }
     }
@@ -35,4 +35,3 @@ class App extends Component {
 
 
 export default App;
-// fixes yay
