@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
-import { robots } from './robots';
 import SearchBox from './SearchBox';
 import { render } from 'react-dom';
 import './App.css';
@@ -8,11 +7,18 @@ import './App.css';
 class App extends Component {
     constructor() {
         super() // weird thing to add here for constructor before this. 
-        this.state = { // state describes the app which can change 
+        this.state = { // state describes the app which can change; so we call it as SMART component
             robots: [],
             searchfield: ""
         }
     }
+
+    componentDidMount() { // getting JSON Data from URL
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response=>  response.json())
+        .then(users =>this.setState({ robots: users}));
+        
+    } 
 
     onSearchChange = (event) => { // anytime comes from React (onstructor, rendor) making method use arrow functions #weirdReact  
         this.setState( { searchfield: event.target.value })
