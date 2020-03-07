@@ -3,6 +3,7 @@ import CardList from './CardList';
 import SearchBox from './SearchBox';
 import { render } from 'react-dom';
 import './App.css';
+import { robots } from './robots';
 
 class App extends Component {
     constructor() {
@@ -16,7 +17,7 @@ class App extends Component {
     componentDidMount() { // getting JSON Data from URL
         fetch("https://jsonplaceholder.typicode.com/users")
         .then(response=>  response.json())
-        .then(users =>this.setState({ robots: users}));
+        .then(users =>this.setState({ robots: users})); // try changing users to [] for loading
         
     } 
 
@@ -28,6 +29,11 @@ class App extends Component {
         const filteredRobots = this.state.robots.filter(robots => {
             return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
+        
+        if (this.state.robots.length === 0) {
+            return <h1>Loading...</h1>
+        } else {
+
         return (
             <div className="tc">
                 <h1 className='f1'>RoboFriends</h1>
@@ -35,9 +41,10 @@ class App extends Component {
                 <CardList robots={filteredRobots} // weird react syntax (this.state) robot passed down as props
                 /> 
             </div>
-        );
+            );
+        }
     }
- };
+};
 
 
 export default App;
