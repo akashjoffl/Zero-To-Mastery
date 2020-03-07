@@ -4,6 +4,7 @@ import SearchBox from './SearchBox';
 import { render } from 'react-dom';
 import './App.css';
 import { robots } from './robots';
+import Scroll from './Scroll';
 
 class App extends Component {
     constructor() {
@@ -26,7 +27,7 @@ class App extends Component {
         
     }
     render() {
-        const filteredRobots = this.state.robots.filter(robots => {
+        const filteredRobots = this .state.robots.filter(robots => {
             return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
         
@@ -38,8 +39,11 @@ class App extends Component {
             <div className="tc">
                 <h1 className='f1'>RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange}/> 
+                <Scroll>
                 <CardList robots={filteredRobots} // weird react syntax (this.state) robot passed down as props
                 /> 
+                </Scroll>
+                
             </div>
             );
         }
