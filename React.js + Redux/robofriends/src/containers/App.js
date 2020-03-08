@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import { render } from 'react-dom';
 import './App.css';
-import { robots } from '../robots';
 import Scroll from '../components/Scroll';
 import Footer from '../components/Footer';
 
@@ -44,7 +42,6 @@ class App extends Component {
                 /> 
                 </Scroll>
                 <Footer />
-                
             </div>
             );
         }   
