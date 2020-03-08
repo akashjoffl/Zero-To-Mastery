@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import './App.css';
 import { robots } from '../robots';
 import Scroll from '../components/Scroll';
+import Footer from '../components/Footer';
 
 class App extends Component {
     constructor() {
@@ -42,6 +43,7 @@ class App extends Component {
                 <CardList robots={filteredRobots} // weird react syntax (this.state) robot passed down as props
                 /> 
                 </Scroll>
+                <Footer />
                 
             </div>
             );
