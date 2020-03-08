@@ -18,7 +18,7 @@ class ErrorBoundry extends Component {
             return <h1>Opps. That is not good</h1>
         }
         return this.props.children
-    }
+    }   
 }
 
 
